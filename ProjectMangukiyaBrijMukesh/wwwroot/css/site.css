@@ -115,3 +115,16 @@ footer {
 .info {
     max-width: 600px;
 }
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #f1f1f1;
+}
+
+    .table th,
+    .table td {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
