@@ -1,0 +1,117 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #f1f1f1;
+    background-color: #01092B;
+    margin: 0;
+    padding-top: 50px;
+}
+
+header {
+    background-color: #01092B;
+    border-bottom: 1px solid #333;
+}
+
+.title-image {
+    width: 45%;
+    max-height: 175px;
+    margin: auto;
+    display: block;
+}
+
+.content-wrapper {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #01092B;
+}
+
+.site-title a {
+    color: #6AC045;
+    text-decoration: none;
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+    nav ul li {
+        float: left;
+    }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+            nav ul li a:hover {
+                background-color: #111;
+            }
+
+footer {
+    background-color: #01092B;
+    color: #999;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background-color: #4b4b4b;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+    .grid-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.details-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    font-size: 1.3em;
+}
+
+.poster {
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+.info {
+    max-width: 600px;
+}
