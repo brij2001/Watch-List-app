@@ -2,4 +2,23 @@
 @model ProjectMangukiyaBrijMukesh.Pages.watchlistModel
 @{
 }
-
+<h2>Watchlist</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>List name</th>
+            <th>Description</th>
+            <th>Created on</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.watchlists)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.CreationDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
