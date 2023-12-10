@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ProjectMangukiyaBrijMukesh;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace ProjectMangukiyaBrijMukesh.Pages.StoredProcedures
 {
@@ -12,11 +13,13 @@ namespace ProjectMangukiyaBrijMukesh.Pages.StoredProcedures
             _context = context;
         }
         [BindProperty]
-        public IList<spByWatchList> spByWatchList { get; set; } = default!;
-        public async Task OnGetAsync(int ListId)
+        public List<spByWatchList> spByWatchList { get; set; } = default!;
+        public async Task OnGetAsync(int id)
         {
-            var listid = new Microsoft.Data.SqlClient.SqlParameter("@listid", ListId);
-            //spByWatchList = await _context.spByWatchLists.FromSqlRaw("Exec spByWatchList @listid={0}", listid).ToListAsync();
+            var listid = new Microsoft.Data.SqlClient.SqlParameter("@listid", id);
+            spByWatchList = await _context.spByWatchLists.FromSqlRaw("Exec spByWatchList @listid={0}", listid).ToListAsync();
+            spByWatchList.Reverse();
+
         }
     }
 }
