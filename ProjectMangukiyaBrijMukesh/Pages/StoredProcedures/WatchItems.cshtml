@@ -1,0 +1,29 @@
+﻿@page "/watchListDetails/{ListId:int}"
+
+@model ProjectMangukiyaBrijMukesh.Pages.StoredProcedures.WatchItemsModel
+@{
+}
+<h2>WatchList Details</h2>
+<table class="table">
+<thead>
+        <tr>
+            <th>name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.spByWatchList)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.MediaId</td>
+                <td>@item.MediaType</td>
+                <td>@item.Poster</td>
+            </tr>
+        }
+    </tbody>
+</table>
