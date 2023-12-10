@@ -16,7 +16,7 @@
         <tr>
             <th>
 
-                @Html.DisplayNameFor(model => model.TblWatchList[0].Name)
+                List @Html.DisplayNameFor(model => model.TblWatchList[0].Name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TblWatchList[0].Description)
@@ -32,9 +32,12 @@
         {
             <tr>
                 <td>
-                    <button asp-pa type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        @Html.DisplayFor(modelItem => item.Name)
+                    <button type="button" class="btn btn-link">
+                        <a href="/watchListDetails/?id=@item.ListId">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a>
                     </button>
+                    (stored proc)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)

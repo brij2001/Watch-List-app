@@ -64,19 +64,19 @@ public partial class Bmangukiya1Context : DbContext
 
             entity.ToView("spByWatchList");
 
-            entity.Property(e => e.Description).HasMaxLength(255);
+            entity.Property(e => e.Description).HasColumnName("Description").HasMaxLength(300);
 
-            entity.Property(e => e.ItemId).HasColumnName("ItemId");
+            entity.Property(e => e.ItemId).HasColumnName("ItemID");
 
-            entity.Property(e => e.ListId).HasColumnName("ListId");
+            entity.Property(e => e.ListId).HasColumnName("ListID");
 
-            entity.Property(e => e.MediaId).HasColumnName("MediaId");
+            entity.Property(e => e.MediaId).HasColumnName("MediaID");
 
-            entity.Property(e => e.MediaType).HasMaxLength(50);
+            entity.Property(e => e.MediaType).HasColumnName("MediaType").HasMaxLength(50);
 
             entity.Property(e => e.Poster).HasColumnName("poster");
 
-            entity.Property(e => e.Title).HasMaxLength(255);
+            entity.Property(e => e.Title).HasColumnName("Title").HasMaxLength(50);
         });
 
         modelBuilder.Entity<OwnerDetail>(entity =>
@@ -396,6 +396,8 @@ public partial class Bmangukiya1Context : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("MediaID");
             entity.Property(e => e.MediaType).HasMaxLength(50);
+            entity.Property(e => e.Title).HasColumnName("Title").HasMaxLength(50);
+            entity.Property(e => e.poster).HasColumnName("poster");
 
             entity.HasOne(d => d.Genre).WithMany(p => p.TblWatchListItems)
                 .HasForeignKey(d => d.GenreId)
